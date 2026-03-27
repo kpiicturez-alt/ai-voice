@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free AI Voice</title>
+</head>
+<body>
+
+<h2>Hindi & Marathi AI Voice</h2>
+
+<textarea id="text" rows="5" cols="40" placeholder="Text लिहा..."></textarea>
+<br><br>
+
+<select id="lang">
+  <option value="hi-IN">Hindi</option>
+  <option value="mr-IN">Marathi</option>
+</select>
+
+<br><br>
+<button onclick="speak()">Speak</button>
+
+<script>
+function speak() {
+  const text = document.getElementById("text").value;
+  const lang = document.getElementById("lang").value;
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = lang;
+
+  window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
