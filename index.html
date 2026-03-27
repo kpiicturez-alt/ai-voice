@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Voice</title>
+</head>
+<body>
+
+<h2>AI Voice Tool</h2>
+
+<textarea id="text"></textarea>
+<br><br>
+
+<button onclick="speak()">Speak</button>
+
+<script>
+function speak() {
+  const text = document.getElementById("text").value;
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "hi-IN";
+  window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
